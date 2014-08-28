@@ -1,0 +1,4 @@
+ff_demo:
+    resource: "@FfDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+

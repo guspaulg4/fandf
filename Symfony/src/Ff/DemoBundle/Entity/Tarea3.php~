@@ -1,0 +1,45 @@
+<?php
+
+namespace Ff\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tarea3
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Tarea3
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $fecha_inicio;
+
+     /**
+     * @ORM\Column(type="date")
+     */
+    protected $fecha_final;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

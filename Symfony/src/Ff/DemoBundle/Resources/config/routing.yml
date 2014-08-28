@@ -1,0 +1,43 @@
+ff_demo_homepage:
+    path: /generalinicio
+    defaults: { _controller: FfDemoBundle:Default:mostrar }
+
+Formulario:
+    path: /generalformulario/
+    defaults:  { _controller: FfDemoBundle:Default:mostrar_formulario }
+
+alumno:
+    path:      /generalalumno/{id}
+    defaults:  { _controller: FfDemoBundle:DetalleAlumno:mostrar_alumno}
+
+verificacion:
+    path:      /generalalumno/{apellidop,apellidom,nombre,disciplina,fechainicio,fechafinal,precio,veces,id}
+    defaults:  { _controller: FfDemoBundle:Default:verificacion}
+
+alumno2:
+    path:      /generalalumno2/{id}
+    defaults:  { _controller: FfDemoBundle:DetalleAlumno:mostrar_alumno_asistencia}
+
+rematricula:
+    path:      /adminrematricula/{id}
+    defaults:  { _controller: FfDemoBundle:DetalleAlumno:mostrar_formulario_rematricula}
+
+verificacion2:
+    path:      /generalalumno/{apellidop,apellidom,nombre}
+    defaults:  { _controller: FfDemoBundle:DetalleAlumno:mostrar_verificacion}
+
+estadistica:
+    path:      /generalestadistica/
+    defaults:  { _controller: FfDemoBundle:Estadistica:mostrar_formulario}
+
+estadistica2:
+    path:      /generalestadistica2/
+    defaults:  { _controller: FfDemoBundle:Estadistica:analizar_formulario}
+
+editar:
+    path:      /editar/{id}
+    defaults:  { _controller: FfDemoBundle:DetalleAlumno:editar}
+
+Busqueda:
+    path:      /generalbusqueda/
+    defaults:  { _controller: FfDemoBundle:Busqueda:mostrar_formulario}

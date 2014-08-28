@@ -1,0 +1,53 @@
+
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/detalle_alumno.css')}}" rel = "stylesheet" type = "text/css"  />
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="footer_arriba">
+  	<img src="{{asset('imagenes/logo3.png')}}" />
+  </div>
+
+  
+  
+  <div id="cuadro_cont">
+
+  		<div id="cuadro1">
+  			
+  		
+  		</div>
+    
+	    <div id="cuadro2">
+
+	    		<div class="nombre">
+		    	<p>Se Matriculo con exito nuevamente al alumno:</p>
+		    	</div>
+
+		    	<div class="datos">
+		    		Alumno : {{apellidop}} {{apellidom}} {{nombre}} <br><br>
+		    	</div>	
+
+		    	<div class="boton">
+                	<a href="{{ path('ff_demo_homepage', { 'slug': '' } )}}">
+                  		Volver Principal
+                	</a>
+            	</div>  
+
+		    	
+			
+		</div>
+	</div>
+  
+
+</body>
+</html>

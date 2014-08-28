@@ -1,0 +1,73 @@
+
+
+
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/detalle_alumno.css')}}" rel = "stylesheet" type = "text/css"  />
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="footer_arriba">
+  	<img src="{{asset('imagenes/logo3.png')}}" />
+  </div>
+
+  
+  
+  <div id="cuadro_cont">
+
+  		<div id="cuadro1">
+  			
+  		
+  		</div>
+    
+	    <div id="cuadro2">
+
+	    		<div class="nombre">
+		    	<p>Se agrego un nuevo alumno en FIGTH FITNESS</p>
+		    	</div>
+
+		    	<div class="datos">
+		    		Alumno : {{apellidop}} {{apellidom}} {{nombre}} <br>
+		    		{% if disciplina==1 %}
+		    			Disciplina : Muay Thai <br> 
+					{% endif %}
+					{% if disciplina== 2%}
+		    			Disciplina : Jiu Jitsu <br> 
+					{% endif %}
+					{% if disciplina== 3%}
+		    			Disciplina : Judo<br> 
+					{% endif %}
+					{% if disciplina== 4%}
+		    			Disciplina : MMA <br> 
+					{% endif %}
+					{% if disciplina== 5%}
+		    			Disciplina : Box<br> 
+					{% endif %}
+		    		Numero de veces: {{veces}} por semana <br>
+		    		Numero total de clases : {{vecestotales}}<br>
+		    		Monto a pagar : {{precio}}<br><br><br>
+		    	</div>	
+
+		    	<div class="boton">
+                	<a href="{{ path('ff_demo_homepage', { 'slug': '' } )}}">
+                  		Volver Principal
+                	</a>
+            	</div>  
+
+		    	
+			
+		</div>
+	</div>
+  
+
+</body>
+</html>

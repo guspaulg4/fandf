@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/estilos.css')}}" rel = "stylesheet" type = "text/css"  />
+
+
+<script type="text/javascript" src="{{ asset('js/new.js') }}" ></script>
+ 
+
+
+
+
+</head>
+
+<body>
+
+<div id="footer_arriba">
+    <img src="{{asset('imagenes/logo3.png')}}" />
+</div>
+
+ <div id="cuadro_cont">
+
+        <div id="cuadro1">
+            
+            <div class="boton">
+                <a href="{{ path('ff_demo_homepage', { 'slug': '' } )}}">
+                  Volver Principal
+                </a>
+            </div>     
+        </div>
+    
+        <div id="cuadro_2">
+
+
+    
+            {{ form_start(form) }}
+                {{ form_errors(form) }}
+             
+                <div class="titulo_form"> Editar los datos de {{apellidop}} {{apellidom}} {{nombre}} </div>
+                         
+            {{ form_end(form) }}
+
+        </div>
+
+        <br><br>
+    </div>
+
+
+    </div>
+
+</body>
+
+
+</html>

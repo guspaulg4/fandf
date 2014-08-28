@@ -1,0 +1,149 @@
+
+
+
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/estilos.css')}}" rel = "stylesheet" type = "text/css"  />
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="footer_arriba">
+  	<img src="{{asset('imagenes/logo3.png')}}" />
+  </div>
+
+  
+  
+  <div id="cuadro_cont">
+
+  		<div id="cuadro1">
+  			
+  			<div class="boton">
+	  			<a href="{{ path('Formulario', { 'slug': '' } )}}">
+				  Matricula
+				</a>
+			</div>
+			
+			<div class="boton">
+	  			<a href="{{ path('Busqueda', { 'slug': '' } )}}">
+				  busqueda
+				</a>
+			</div>	
+
+			<div class="boton">
+	  			<a href="{{ path('estadistica', { 'slug': '' } )}}">
+				  Estadisticas
+				</a>
+			</div>	
+
+  		</div>
+    
+	    <div id="cuadro2">
+
+
+
+
+
+	    	<table align="center">		
+		       		<div id="texto">Los Cumpleañeros:</div> <br>
+		   	  	
+
+				{% for cumple in resultado %}
+				<tr>
+					
+
+
+				    {% if cumple.cumple|date("m") == "now"|date("m") %}
+				    {% if cumple.cumple|date("d") == "now"|date("d") %}
+
+						<td class="fila_1">{{ cumple.apellidop }} </td>
+					
+						<td class="fila_1">{{ cumple.apellidom}} </td>
+
+						<td class="fila_2">{{cumple.nombre }} </td>
+
+						<td class="fila_3">
+							<a href="{{ url('alumno', { 'id': cumple.id }) }}">
+								<img src="{{asset('imagenes/icon-lupa.png')}}" width="20" height="20"/> 
+							</a>	
+						</td>
+
+					{% endif %}
+					{% endif %}
+
+				</tr>
+
+				{% endfor%}
+			</table><br>
+
+
+
+
+
+
+
+
+
+
+
+
+		    	<div>
+		       		<div id="texto">Pago al día</div> 
+		       	  	<div id="verde"></div> 
+		   	  	</div>
+		      	
+		        <div>
+		       		<div id="texto">Pago por vencer</div>
+		          	<div id="rojo"></div> 
+		      	</div>
+		      
+		      	<div>
+		       	  	<div id="texto">Pago Vencido</div>
+		       		<div id="negro"></div> 
+		      	</div>	
+		        <br><br>
+
+	      	<table align="center">
+
+				<tr>
+					<td class="fila1"> APELLIDOS</td>
+					<td class="fila1"> APELLIDOS</td>
+					<td class="fila2"> NOMBRES</td>
+					<td class="fila3"> </td>
+					<td class="fila3"> </td>
+				</tr>
+
+				{% for result in resultado %}
+				<tr>
+					<td class="fila_1">{{ result.apellidop }} </td>
+				
+					<td class="fila_1">{{ result.apellidom}} </td>
+
+					<td class="fila_2">{{result.nombre}}</td>
+
+					
+					<td class="fila_3">
+						<a href="{{ url('alumno', { 'id': result.id }) }}">
+							<img src="{{asset('imagenes/icon-lupa.png')}}" width="20" height="20"/> 
+						</a>	
+					</td>
+				</tr>
+
+				{% endfor%}
+			</table>
+
+			
+		</div>
+	</div>
+  
+
+</body>
+</html>

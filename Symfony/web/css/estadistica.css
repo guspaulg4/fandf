@@ -1,0 +1,142 @@
+@charset "utf-8";
+body{
+    background: #f4f1f1;
+    
+}
+
+
+#contenedor {
+	height: 200px;
+	width: 600px;
+}
+#footer_arriba {
+	height: 130px;
+	width: 100%;
+	background: #0e588e;
+	margin-bottom: 40px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+#cuadro_cont {
+	height: 400px;
+	width: 742px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#cuadro1 {
+
+	float: left;
+	width: 170px;
+    height: 500px;
+    padding-right: 30px;
+    
+}
+#cuadro2 {
+	float: left;
+	width: 500px;
+	padding:20px;
+    border:  1px solid #bdc3bd;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.boton{
+    width: 148px;
+    padding: 10px;
+    height: 20px;
+    border: 1px solid #bdc3bd;
+    text-align: center;
+    background: #fff;
+}
+
+.boton a {
+   color: #082764;
+   font-size: 16px;
+   font-weight: 400px;
+   text-decoration: none;
+
+}
+
+.boton a:hover {
+   color: #3c3d40;
+   font-size: 16px;
+   font-weight: bold;
+   text-decoration: none;
+
+}
+
+.boton:hover {
+   color: #45484b;
+   font-size: 16px;
+   font-weight: 400px;
+   text-decoration: none;
+   background: #eafdea;
+
+}
+
+form {
+   
+   background:rgb(255, 255, 255) ;
+   width: 330px;
+   padding:20px;       
+   border-radius: 10px;    
+       
+}
+form div { padding: 7px;}
+form div label{display: block; float: left; width: 150px;color: #5b5b62}
+select:focus, textarea:focus, input:focus{background-color: #FFFDD4;}
+select:hover, textarea:hover, input:hover{background-color: #dde3e3;}
+
+.titulo_form{
+    font-size: 16px;
+    text-align: justify;
+    color: #082764;
+    text-align: center;
+}
+
+button{
+	background:rgb(36, 90, 145) ;
+    color: #fff;
+    border: 3px solid rgb(21, 67, 113);
+    border-radius: 4px;
+    width: 130px;
+    height: 40px;
+    
+}
+
+button:hover{
+	background:rgb(36, 90, 145) ;
+    color: #c4bebe;
+    border: 3px solid rgb(21, 67, 113);
+    border-radius: 4px;
+    width: 130px;
+    height: 40px;
+
+}
+
+.escuela{
+    width: 250px;
+    color: #212121;
+    font-size: 16px;
+    float: left;
+}
+
+.tituloescuela{
+    color: #a20404;
+    font-size: 18px;
+    font-weight: bolder;    
+    
+}
+.numero{
+    color: #a20404;
+    font-size: 16px;
+    font-weight: bolder;    
+    float: left;
+}
+
+.antes{
+    color: rgb(21, 67, 113);
+    font-size: 16px;   
+    float: left;
+}
+

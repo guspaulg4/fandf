@@ -1,0 +1,156 @@
+@charset "utf-8";
+body{
+    background: #f4f1f1;
+    
+}
+
+
+#contenedor {
+	height: 200px;
+	width: 600px;
+}
+#footer_arriba {
+	height: 130px;
+	width: 100%;
+	background: #0e588e;
+	margin-bottom: 40px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+#cuadro_cont {
+	height: 400px;
+	width: 740px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#cuadro1 {
+
+	float: left;
+	width: 170px;
+    height: 500px;
+    padding-right: 30px;
+    
+}
+#cuadro2 {
+	float: left;
+	width: 498px;
+	padding:20px;
+    border:  1px solid #bdc3bd;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.boton{
+    width: 148px;
+    padding: 10px;
+    height: 20px;
+    border: 1px solid #bdc3bd;
+    text-align: center;
+    background: #fff;
+}
+
+.boton a {
+   color: #082764;
+   font-size: 16px;
+   font-weight: 400px;
+   text-decoration: none;
+
+}
+
+.boton a:hover {
+   color: #3c3d40;
+   font-size: 16px;
+   font-weight: bold;
+   text-decoration: none;
+
+}
+
+.boton:hover {
+   color: #45484b;
+   font-size: 16px;
+   font-weight: 400px;
+   text-decoration: none;
+   background: #eafdea;
+
+}
+
+.fila1{
+    
+    width: 100px;
+    font-size: 16px;
+    text-align: justify;
+    color: #082764;
+    font-weight: bold;
+    padding-bottom: 20px;
+    
+}
+
+.fila2{
+    
+    width: 80px;
+    font-size: 16px;
+    text-align: justify;
+    color: #082764;
+    font-weight: bold;
+    padding-bottom: 20px;
+    
+}
+
+.nombre{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.datos{
+    font-size: 16px;
+    color: #464648;
+    font-weight: bold;
+}
+
+.asistencia{
+   color: #9f0303;
+   font-size: 40px;    
+}
+
+#casistencia{
+    float: left;
+    text-align: center;
+}
+#casistencia2{ 
+    text-align: center;
+}
+
+#verde{
+	background-color: #090;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	}
+	
+#rojo{
+	background-color: #F00;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	}
+	
+#negro{
+	background-color: #000;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	}
+
+#texto{
+	float: left;
+	}
+
+
+

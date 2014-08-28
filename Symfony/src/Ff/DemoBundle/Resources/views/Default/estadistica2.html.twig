@@ -1,0 +1,438 @@
+
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/estadistica.css')}}" rel = "stylesheet" type = "text/css"  />
+
+<script type="text/javascript" src="{{ asset('js/new.js') }}" ></script> 
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="footer_arriba">
+  	<img src="{{asset('imagenes/logo3.png')}}" />
+  </div>
+
+  
+  
+  <div id="cuadro_cont">
+
+  		<div id="cuadro1">
+  			
+  			<div class="boton">
+                <a href="{{ path('ff_demo_homepage', { 'slug': '' } )}}">
+                  Volver Principal
+                </a>
+            </div>
+
+  		</div>
+    
+	    <div id="cuadro2">
+
+          {{ form_start(form) }}
+                {{ form_errors(form) }}
+             
+                <div class="titulo_form"> INGRESAR LAS FECHAS A ANALIZAR</div>
+                         
+          {{ form_end(form) }}
+
+          {% set matHombres = 0 %}
+          {% set matMujeres = 0 %}
+          {% set matReno = 0 %}
+          {% set montoHombres = 0 %}
+          {% set montoMujeres  = 0 %}
+          {% set montoReno = 0 %}
+          {% set ingreso1 = 0 %}
+
+          {% for muay1 in muay %}
+                {% if muay1.fechainicio >= fechai  %}
+                    {% if muay1.fechainicio <= fechaf  %}
+
+
+                            {% if muay1.sexo == 1  %}
+
+                                  {% set matMujeres = 1 + matMujeres %}
+                                  {% set montoMujeres = muay1.precio + montoMujeres %}
+                                  {% set ingreso1 = muay1.precio + ingreso1 %}  
+
+                            {%endif%}
+
+                            {% if muay1.sexo == 2  %}
+
+                                  {% set matHombres = 1 + matHombres %}
+                                  {% set montoHombres = muay1.precio + montoHombres %}
+                                  {% set ingreso1 = muay1.precio + ingreso1 %}  
+
+                            {%endif%}     
+
+                            {% if muay1.sexo == 3  %}
+
+                                  {% set matReno = 1 + matReno%}
+                                  {% set montoReno = muay1.precio + montoReno %}
+                                  {% set ingreso1 = muay1.precio + ingreso1 %}  
+
+                            {%endif%}  
+
+
+                    {%endif%}
+                {%endif%}
+          {% endfor%}
+
+
+          <hr>
+
+          <div class="escuela">  
+
+
+                 <div class="tituloescuela"> MUAY THAI </div><br>
+
+                 <div class="antes">Nuevas Matriculas Hombres:</div> 
+                 <div class="numero"> {{matHombres}} </div><br>
+
+                 <div class="antes"> Nuevas Matriculas Mujeres:</div>
+                 <div class="numero">{{matMujeres}}</div><br>
+
+                 <div class="antes">matricula renovadas:</div> 
+                 <div class="numero">{{matReno}}</div><br><br>
+
+                 <div class="antes">Monto Matriculas Hombres: </div>
+                 <div class="numero"> S/.{{montoHombres}}</div><br>
+
+                 <div class="antes">Monto Matriculas Mujeres: </div>
+                 <div class="numero">S/.{{montoMujeres}} </div><br>
+
+                 <div class="antes">Monto matriculas renovadas: </div>
+                 <div class="numero"> S/.{{montoReno}} </div><br><br>
+
+                 <div class="antes">Ingresos totales : </div>
+                 <div class="numero"> S/.{{ingreso1}}</div>  <br>
+          </div>
+
+{# **************************************************************************************** #}
+
+          {% set matHombres = 0 %}
+          {% set matMujeres = 0 %}
+          {% set matReno = 0 %}
+          {% set montoHombres = 0 %}
+          {% set montoMujeres  = 0 %}
+          {% set montoReno = 0 %}
+          {% set ingreso2 = 0 %}
+
+          {% for jiu1 in jiu %}
+                {% if jiu1.fechainicio >= fechai  %}
+                    {% if jiu1.fechainicio <= fechaf  %}
+
+
+                            {% if jiu1.sexo == 1  %}
+
+                                  {% set matMujeres = 1 + matMujeres %}
+                                  {% set montoMujeres = jiu1.precio + montoMujeres %}
+                                  {% set ingreso2 = jiu1.precio + ingreso2 %}  
+
+                            {%endif%}
+
+                            {% if jiu1.sexo == 2  %}
+
+                                  {% set matHombres = 1 + matHombres %}
+                                  {% set montoHombres = jiu1.precio + montoHombres %}
+                                  {% set ingreso2 = jiu1.precio + ingreso2 %}  
+
+                            {%endif%}     
+
+                            {% if jiu1.sexo == 3  %}
+
+                                  {% set matReno = 1 + matReno%}
+                                  {% set montoReno = jiu1.precio + montoReno %}
+                                  {% set ingreso2 = jiu1.precio + ingreso2 %}  
+
+                            {%endif%}  
+
+
+                    {%endif%}
+                {%endif%}
+          {% endfor%}
+
+          <div class="escuela">  
+
+
+                 <div class="tituloescuela"> JIU JITSU </div><br>
+
+                 <div class="antes">Nuevas Matriculas Hombres:</div> 
+                 <div class="numero"> {{matHombres}} </div><br>
+
+                 <div class="antes"> Nuevas Matriculas Mujeres:</div>
+                 <div class="numero">{{matMujeres}}</div><br>
+
+                 <div class="antes">matricula renovadas:</div> 
+                 <div class="numero">{{matReno}}</div><br><br>
+
+                 <div class="antes">Monto Matriculas Hombres: </div>
+                 <div class="numero">S/.{{montoHombres}}</div><br>
+
+                 <div class="antes">Monto Matriculas Mujeres: </div>
+                 <div class="numero">S/.{{montoMujeres}} </div><br>
+
+                 <div class="antes">Monto matriculas renovadas: </div>
+                 <div class="numero">S/. {{montoReno}} </div><br><br>
+
+                 <div class="antes">Ingresos totales :</div>
+                 <div class="numero"> S/.{{ingreso2}}</div>  <br>
+          </div>
+
+
+{# **************************************************************************************** #}
+
+          {% set matHombres = 0 %}
+          {% set matMujeres = 0 %}
+          {% set matReno = 0 %}
+          {% set montoHombres = 0 %}
+          {% set montoMujeres  = 0 %}
+          {% set montoReno = 0 %}
+          {% set ingreso3 = 0 %}
+
+          {% for box1 in box %}
+                {% if box1.fechainicio >= fechai  %}
+                    {% if box1.fechainicio <= fechaf  %}
+
+
+                            {% if box1.sexo == 1  %}
+
+                                  {% set matMujeres = 1 + matMujeres %}
+                                  {% set montoMujeres = box1.precio + montoMujeres %}
+                                  {% set ingreso3 = box1.precio + ingreso3 %}  
+
+                            {%endif%}
+
+                            {% if box1.sexo == 2  %}
+
+                                  {% set matHombres = 1 + matHombres %}
+                                  {% set montoHombres = box1.precio + montoHombres %}
+                                  {% set ingreso3 = box1.precio + ingreso3 %}  
+
+                            {%endif%}     
+
+                            {% if box1.sexo == 3  %}
+
+                                  {% set matReno = 1 + matReno%}
+                                  {% set montoReno = box1.precio + montoReno %}
+                                  {% set ingreso3 = box1.precio + ingreso3 %}  
+
+                            {%endif%}  
+
+
+                    {%endif%}
+                {%endif%}
+          {% endfor%}
+
+          <div class="escuela">  
+
+                 <br><br> 
+                 <div class="tituloescuela"> BOX </div><br>
+
+                 <div class="antes">Nuevas Matriculas Hombres:</div> 
+                 <div class="numero"> {{matHombres}} </div><br>
+
+                 <div class="antes"> Nuevas Matriculas Mujeres:</div>
+                 <div class="numero">{{matMujeres}}</div><br>
+
+                 <div class="antes">matricula renovadas:</div> 
+                 <div class="numero">{{matReno}}</div><br><br>
+
+                 <div class="antes">Monto Matriculas Hombres: </div>
+                 <div class="numero">S/.{{montoHombres}}</div><br>
+
+                 <div class="antes">Monto Matriculas Mujeres: </div>
+                 <div class="numero">S/.{{montoMujeres}} </div><br>
+
+                 <div class="antes">Monto matriculas renovadas: </div>
+                 <div class="numero"> S/.{{montoReno}} </div><br><br>
+
+                 <div class="antes">Ingresos totales :</div>
+                 <div class="numero"> S/.{{ingreso3}}</div>  <br>
+          </div>
+
+{# **************************************************************************************** #}
+
+          {% set matHombres = 0 %}
+          {% set matMujeres = 0 %}
+          {% set matReno = 0 %}
+          {% set montoHombres = 0 %}
+          {% set montoMujeres  = 0 %}
+          {% set montoReno = 0 %}
+          {% set ingreso4 = 0 %}
+
+          {% for mma1 in mma %}
+                {% if mma1.fechainicio >= fechai  %}
+                    {% if mma1.fechainicio <= fechaf  %}
+
+
+                            {% if mma1.sexo == 1  %}
+
+                                  {% set matMujeres = 1 + matMujeres %}
+                                  {% set montoMujeres = mma1.precio + montoMujeres %}
+                                  {% set ingreso4 = mma1.precio + ingreso4 %}  
+
+                            {%endif%}
+
+                            {% if mma1.sexo == 2  %}
+
+                                  {% set matHombres = 1 + matHombres %}
+                                  {% set montoHombres = mma1.precio + montoHombres %}
+                                  {% set ingreso4 = mma1.precio + ingreso4 %}  
+
+                            {%endif%}     
+
+                            {% if mma1.sexo == 3  %}
+
+                                  {% set matReno = 1 + matReno%}
+                                  {% set montoReno = mma1.precio + montoReno %}
+                                  {% set ingreso4 = mma1.precio + ingreso4 %}  
+
+                            {%endif%}  
+
+
+                    {%endif%}
+                {%endif%}
+          {% endfor%}
+
+          <div class="escuela">  
+
+                 <br><br> 
+                 <div class="tituloescuela"> MMA </div><br>
+
+                 <div class="antes">Nuevas Matriculas Hombres:</div> 
+                 <div class="numero"> {{matHombres}} </div><br>
+
+                 <div class="antes"> Nuevas Matriculas Mujeres:</div>
+                 <div class="numero">{{matMujeres}}</div><br>
+
+                 <div class="antes">matricula renovadas:</div> 
+                 <div class="numero">{{matReno}}</div><br><br>
+
+                 <div class="antes">Monto Matriculas Hombres: </div>
+                 <div class="numero">S/.{{montoHombres}}</div><br>
+
+                 <div class="antes">Monto Matriculas Mujeres: </div>
+                 <div class="numero">S/.{{montoMujeres}} </div><br>
+
+                 <div class="antes">Monto matriculas renovadas: </div>
+                 <div class="numero"> S/.{{montoReno}} </div><br><br>
+
+                 <div class="antes">Ingresos totales :</div>
+                 <div class="numero"> S/.{{ingreso4}}</div>  <br>
+          </div>
+
+
+
+
+{# **************************************************************************************** #}
+
+          {% set matHombres = 0 %}
+          {% set matMujeres = 0 %}
+          {% set matReno = 0 %}
+          {% set montoHombres = 0 %}
+          {% set montoMujeres  = 0 %}
+          {% set montoReno = 0 %}
+          {% set ingreso5 = 0 %}
+
+          {% for judo1 in judo %}
+                {% if judo1.fechainicio >= fechai  %}
+                    {% if judo1.fechainicio <= fechaf  %}
+
+
+                            {% if judo1.sexo == 1  %}
+
+                                  {% set matMujeres = 1 + matMujeres %}
+                                  {% set montoMujeres = judo1.precio + montoMujeres %}
+                                  {% set ingreso5 = judo1.precio + ingreso5 %}  
+
+                            {%endif%}
+
+                            {% if judo1.sexo == 2  %}
+
+                                  {% set matHombres = 1 + matHombres %}
+                                  {% set montoHombres = judo1.precio + montoHombres %}
+                                  {% set ingreso5 = judo1.precio + ingreso5 %}  
+
+                            {%endif%}     
+
+                            {% if judo1.sexo == 3  %}
+
+                                  {% set matReno = 1 + matReno%}
+                                  {% set montoReno = judo1.precio + montoReno %}
+                                  {% set ingreso5 = judo1.precio + ingreso5 %}  
+
+                            {%endif%}  
+
+
+                    {%endif%}
+                {%endif%}
+          {% endfor%}
+
+          <div class="escuela">  
+
+                 <br><br> 
+                 <div class="tituloescuela"> JUDO </div><br>
+
+                 <div class="antes">Nuevas Matriculas Hombres:</div> 
+                 <div class="numero"> {{matHombres}} </div><br>
+
+                 <div class="antes"> Nuevas Matriculas Mujeres:</div>
+                 <div class="numero">{{matMujeres}}</div><br>
+
+                 <div class="antes">matricula renovadas:</div> 
+                 <div class="numero">{{matReno}}</div><br><br>
+
+                 <div class="antes">Monto Matriculas Hombres: </div>
+                 <div class="numero">S/.{{montoHombres}}</div><br>
+
+                 <div class="antes">Monto Matriculas Mujeres: </div>
+                 <div class="numero">S/.{{montoMujeres}} </div><br>
+
+                 <div class="antes">Monto matriculas renovadas: </div>
+                 <div class="numero"> S/.{{montoReno}} </div><br><br>
+
+                 <div class="antes">Ingresos totales :</div>
+                 <div class="numero"> S/.{{ingreso5}}</div>  <br>
+          </div>
+
+
+
+{# **************************************************************************************** #}
+
+          {% set ingreso6 = 0 %}
+          {% set ingreso6 = ingreso1 + ingreso2 + ingreso3 + ingreso4 + ingreso5 %}
+
+         
+
+          <div class="escuela">  
+
+                 <br><br> 
+                 <div class="tituloescuela"> INGRESOS TOTALES </div><br>
+
+                 <div class="antes">Ingresos en el intervalo:</div> 
+                 <div class="numero"> S/.{{ingreso6}} </div><br>
+
+          </div>
+
+
+
+
+
+
+
+
+			
+		</div>
+	</div>
+  
+
+</body>
+</html>

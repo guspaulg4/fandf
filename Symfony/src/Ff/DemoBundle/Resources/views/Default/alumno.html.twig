@@ -1,0 +1,186 @@
+
+
+
+<html>
+<head>
+
+<title>Fight and Fitness</title>
+
+<Link  href = "{{asset('css/detalle_alumno.css')}}" rel = "stylesheet" type = "text/css"  />
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="footer_arriba">
+  	<img src="{{asset('imagenes/logo3.png')}}" />
+  </div>
+
+  
+  
+  <div id="cuadro_cont">
+
+  		<div id="cuadro1">
+  			
+  			<div class="boton">
+                <a href="{{ path('ff_demo_homepage', { 'slug': '' } )}}">
+                  Volver Principal
+                </a>
+            </div>
+
+  		</div>
+    
+	    <div id="cuadro2">
+
+	    		<div>
+		       		<div id="texto">Pago al día</div> 
+		       	  	<div id="verde"></div> 
+		   	  	</div>
+		      	
+		        <div>
+		       		<div id="texto">Pago por vencer</div>
+		          	<div id="rojo"></div> 
+		      	</div>
+		      
+		      	<div>
+		       	  	<div id="texto">Pago Vencido</div>
+		       		<div id="negro"></div> 
+		      	</div>	
+		        <br><br>
+
+	    		<a title="MATRICULAR" href="{{ path('rematricula', { 'id': id  } )}}">	
+	    			<img src="{{asset('imagenes/boton_1.png')}}"/>
+	    		</a>
+
+	    		
+	    		<a href="{{ path('alumno2', { 'id': id  } )}}">	
+	    			<img title="ASISTENCIA" src="{{asset('imagenes/boton_3.png')}}" />
+	    		</a>	
+
+	    		<a href="{{ path('editar', { 'id': id  } )}}">	
+	    			<img title="EDITAR ALUMNO" src="{{asset('imagenes/boton_5.png')}}" />
+	    		</a>
+
+	    		<div class="nombre">
+	    		
+		    		<p>{{alumno.apellidop}} {{alumno.apellidom}} {{alumno.nombre}}
+		    		
+		    		{% if date(alumnop[0].fechafinal) > date() %}
+							
+							{% if date(alumnop[0].fechafinal) < date('+14days')  %}
+
+								<div id="rojo"></div> 
+
+							{% else %}	
+
+								<div id="verde"> </div> 
+
+							{% endif %}
+
+						{% endif %}
+
+						{% if date(alumnop[0].fechafinal) < date() %}
+							<div id="negro"> </div> 
+					
+					{% endif %}
+
+					</p>
+
+				<br>
+		    	</div>
+
+		    	<hr>
+
+		    	<div>
+		    		<div id="casistencia">
+		    			<div  class="datos">
+		    				Asistencias a la fecha
+		    			</div>
+		    			<div class="asistencia">
+		    				{{ alumnop[0].vecesasistencia}}
+		    			</div>
+
+		    		</div> 
+
+		    		<div id="casistencia2">
+		    			<div class="datos">
+		    				de un total de:
+		    			</div>
+		    			<div class="asistencia">
+		    				{{ alumnop[0].vecestotales}}
+		    			</div>
+
+		    		</div> 
+
+		    	</div>
+
+		    	<div class="datos">
+			    	<p>
+			    		DNI: {{alumno.dni}} <br>
+			    		Télefono Fijo: {{alumno.telefonof}} <br>
+			    		Télefono Celular: {{alumno.telefonoc}} <br>
+			    	</p> 
+		    	</div><hr>
+
+		    	<div class="datos3">
+
+		    		<table align="center">
+		    			<div class="nombre"> Historial del Alumno</div> <br>
+		    			<tr>
+							<td class="fila1"> Fecha inicio</td>
+							<td class="fila1"> Fecha Final</td>
+							<td class="fila1"> Disciplina</td>
+							<td class="fila2"> Precio</td>
+							<td class="fila1"> T.Pago </td>
+						</tr>
+
+						
+							{% for result in alumnop%}
+
+								<tr>
+
+									<td class="datos"> {{result.fechainicio|date("d/m/Y")}}</td>
+									<td class="datos"> {{result.fechafinal|date("d/m/Y")}}</td>
+									{% if result.disciplina == "1"%}
+									<td class="datos">Muaythai</td>
+									{%endif%}
+									{% if result.disciplina == "2"%}
+									<td class="datos">Jiu Jitsu</td>
+									{%endif%}
+									{% if result.disciplina == "3"%}
+									<td class="datos">Judo</td>
+									{%endif%}
+									{% if result.disciplina == "4"%}
+									<td class="datos">MMA</td>
+									{%endif%}
+									{% if result.disciplina == "5"%}
+									<td class="datos">Box</td>
+									{%endif%}
+									<td class="datos"> {{result.precio}}</td>
+									{%if result.tipodepago=="1"%}
+									<td class="datos">Efectivo</td>
+									{%endif%}
+									{%if result.tipodepago=="2"%}
+									<td class="datos">Tarjeta</td>
+									{%endif%}
+
+								</tr>
+							{% endfor%}
+
+						
+
+		    		</table>
+
+
+		    	</div>	
+			
+		</div>
+	</div>
+  
+
+</body>
+</html>

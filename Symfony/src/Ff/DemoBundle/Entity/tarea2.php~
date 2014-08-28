@@ -1,0 +1,65 @@
+<?php
+
+namespace Ff\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * tarea2
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class tarea2
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $disciplina;
+
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $fecha_inicio;
+
+     /**
+     * @ORM\Column(type="date")
+     */
+    protected $fecha_final;
+
+     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $precio;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $tipodepago;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $veces;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

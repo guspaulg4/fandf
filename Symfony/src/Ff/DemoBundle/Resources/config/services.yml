@@ -1,0 +1,7 @@
+parameters:
+#    ff_demo.example.class: Ff\DemoBundle\Example
+
+services:
+#    ff_demo.example:
+#        class: %ff_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
